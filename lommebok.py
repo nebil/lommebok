@@ -18,6 +18,14 @@ def get_accounts():
     return template('accounts', accounts=result)
 
 
+@get('/accounts/<id_>/')
+def get_account(id_):
+    cursor = database_conn.execute("SELECT * FROM account WHERE id=?", id_)
+    result = cursor.fetchone()
+
+    return template('account', account=result)
+
+
 @post('/accounts/')
 def add_account():
     values = request.forms.get('name'), request.forms.get('currency')
