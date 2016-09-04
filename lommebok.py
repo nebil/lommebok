@@ -29,11 +29,15 @@ def get_accounts():
 
 @get('/accounts/<id_>/')
 def get_account(id_):
-    cursor = database_conn.execute("SELECT * FROM account WHERE id=?", (id_,))
-    result = cursor.fetchone()
+    id_ = tuple(id_)
 
-    if not result: return HTTPError(404, "Invalid account.")
-    return template('account', account=result)
+    account_query = "SELECT * FROM account WHERE id=?"
+    records_query = "SELECT * FROM record WHERE account_id=?"
+    result = {'account': database_conn.execute(account_query, id_).fetchone(),
+              'records': database_conn.execute(records_query, id_).fetchall()}
+
+    if not result['account']: return HTTPError(404, "Invalid account.")
+    return template('account', **result)
 
 
 @post('/accounts/')
