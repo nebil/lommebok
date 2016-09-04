@@ -44,3 +44,32 @@ a {
 a:hover, tr:hover td {
   color: #3A3;
 }
+
+input {
+  display: block;
+  width: 15em;
+  margin-top: 0.5ex;
+  margin-bottom: 2.0ex;
+  padding: 0.9ex 0.6em;
+  box-sizing: border-box;
+
+  border: 1px solid #DDD;
+  background-color: #FFF;
+  font-family: 'Helvetica Neue',
+               'Helvetica', 'Arial',
+               'Liberation Sans', sans-serif;
+  font-size: 1em;
+}
+
+input[type='submit'] {
+  color: #333;
+  margin-top: 2.5ex;
+  background-color: #AD8;
+
+  border: 1px solid #888;
+  box-shadow: inset 0px 3px #8C5;
+}
+
+input[type='submit']:hover {
+  background-color: #8C5;
+}
