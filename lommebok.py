@@ -49,6 +49,16 @@ def add_account():
     redirect('')
 
 
+@post('/accounts/<account_id>/records/')
+def add_record(account_id):
+    args = (request.forms.get('amount'), request.forms.get('created_on'),
+            account_id)
+
+    database_conn.execute("INSERT INTO record VALUES (NULL, ?, ?, ?)", args)
+    database_conn.commit()
+    redirect('..')
+
+
 if __name__ == '__main__':
     # Listening on 'localhost:8080' with the standard 'wsgiref' module.
     # More details at <https://docs.python.org/3/library/wsgiref.html>.

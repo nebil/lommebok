@@ -15,4 +15,10 @@
         </tr>
       % end
       </tbody>
-    </table>\\
+    </table>
+
+    <form action='records/' method='post'>
+      <label>Monto: <input type='number' name='amount' min='0'></label>
+      <label>Fecha: <input type='date' name='created_on'></label>
+      <input type='submit' value='Añadir registro'>
+    </form>\\
