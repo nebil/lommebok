@@ -20,7 +20,7 @@ def get_accounts():
 
 @get('/accounts/<id_>/')
 def get_account(id_):
-    cursor = database_conn.execute("SELECT * FROM account WHERE id=?", id_)
+    cursor = database_conn.execute("SELECT * FROM account WHERE id=?", (id_,))
     result = cursor.fetchone()
 
     if not result: return HTTPError(404, "Invalid account.")
