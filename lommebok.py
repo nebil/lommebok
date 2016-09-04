@@ -1,5 +1,5 @@
 import sqlite3
-from bottle import get, post, redirect, request, run, template
+from bottle import get, HTTPError, post, redirect, request, run, template
 
 DATABASE_PATH = 'lommebok.sqlite3'
 database_conn = sqlite3.connect(DATABASE_PATH)
@@ -23,6 +23,7 @@ def get_account(id_):
     cursor = database_conn.execute("SELECT * FROM account WHERE id=?", id_)
     result = cursor.fetchone()
 
+    if not result: return HTTPError(404, "Invalid account.")
     return template('account', account=result)
 
 
