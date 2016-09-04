@@ -6,6 +6,12 @@ QUERY = """
         """
 
 database_conn = sqlite3.connect('lommebok.sqlite3')
-database_conn.execute(QUERY)
-database_conn.commit()
-database_conn.close()
+
+try:
+    database_conn.execute(QUERY)
+except sqlite3.OperationalError:
+    print("error")
+else:
+    database_conn.commit()
+finally:
+    database_conn.close()
