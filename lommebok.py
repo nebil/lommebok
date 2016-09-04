@@ -1,8 +1,9 @@
-from sqlite3 import connect
+import sqlite3
 from bottle import get, post, redirect, request, run, template
 
 DATABASE_PATH = 'lommebok.sqlite3'
-database_conn = connect(DATABASE_PATH)
+database_conn = sqlite3.connect(DATABASE_PATH)
+database_conn.row_factory = sqlite3.Row
 
 
 @get('/')

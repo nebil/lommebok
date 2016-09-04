@@ -8,10 +8,26 @@
   <body>
     <h1>Mis cuentas</h1>
     % if accounts:
-    <p>Sí hay cuentas creadas.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Moneda</th>
+        </tr>
+      </thead>
+      <tbody>
+      % for account in accounts:
+        <tr>
+          <td>{{ account['name']     }}</td>
+          <td>{{ account['currency'] }}</td>
+        </tr>
+      % end
+      </tbody>
+    </table>
     % else:
     <p>No hay cuentas creadas.</p>
     % end
+
     <form method='post'>
       <label>Nombre: <input type='text' maxlength=20 name='name'></label><br>
       <label>Moneda: <input type='text' maxlength=20 name='currency'></label><br>
