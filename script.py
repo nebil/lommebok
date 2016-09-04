@@ -1,11 +1,12 @@
 import sqlite3
+from lommebok import DATABASE_PATH
 
 # Reference: <https://www.sqlite.org/datatype3.html>
 QUERY = """
         CREATE TABLE account(id INTEGER PRIMARY KEY, name TEXT, currency TEXT);
         """
 
-database_conn = sqlite3.connect('lommebok.sqlite3')
+database_conn = sqlite3.connect(DATABASE_PATH)
 
 try:
     database_conn.execute(QUERY)

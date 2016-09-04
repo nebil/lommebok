@@ -7,5 +7,10 @@
 
   <body>
     <h1>Mis cuentas</h1>
+    % if accounts:
+    <p>Sí hay cuentas creadas.</p>
+    % else:
+    <p>No hay cuentas creadas.</p>
+    % end
   </body>
 </html>

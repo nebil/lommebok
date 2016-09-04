@@ -1,5 +1,9 @@
 # virtual environment
 venv
 
+# byte-compiled files
+__pycache__
+*.pyc
+
 # et caetera
 *.sqlite3
