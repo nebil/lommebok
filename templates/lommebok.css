@@ -13,3 +13,34 @@ body {
 h1 {
   color: #333;
 }
+
+table {
+  margin: 3ex 0em;
+  width: 360px;
+
+  font-size: 1.1em;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 1.2ex 0.6em;
+
+  color: #333;
+  border-bottom: 2px solid #888;
+}
+
+td {
+  padding: 0.9ex 0.6em;
+
+  color: #555;
+  border-bottom: 1px solid #DDD;
+}
+
+a {
+  color: #23C;
+}
+
+a:hover, tr:hover td {
+  color: #3A3;
+}
