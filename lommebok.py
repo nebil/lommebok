@@ -1,9 +1,9 @@
-from bottle import get, run
+from bottle import get, run, template
 
 
 @get('/')
 def index():
-    return "Bienvenido a Lommebok."
+    return template('index')
 
 
 # Listening on 'localhost:8080' with the standard 'wsgiref' module.
