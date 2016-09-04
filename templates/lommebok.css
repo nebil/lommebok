@@ -1,0 +1,15 @@
+body {
+  margin: 3em auto;
+  max-width: 720px;
+
+  background-color: #FAFAFA;
+  color: #4A4A4A;
+  font-family: 'Helvetica Neue',
+               'Helvetica', 'Arial',
+               'Liberation Sans', sans-serif;
+  line-height: 1.5em;
+}
+
+h1 {
+  color: #333;
+}

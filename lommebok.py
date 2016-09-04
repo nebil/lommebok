@@ -1,12 +1,18 @@
 import sqlite3
-from bottle import (get, post, redirect, request, template,
+from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
                     run)
 
+CSS_REGEX = r'.*\.css'
 DATABASE_PATH = 'lommebok.sqlite3'
 database_conn = sqlite3.connect(DATABASE_PATH)
 database_conn.row_factory = sqlite3.Row
 TEMPLATE_PATH.append('templates')
+
+
+@get('/<filename:re:{}>'.format(CSS_REGEX))
+def return_css_file(filename):
+    return static_file(filename, root='templates')
 
 
 @get('/')
