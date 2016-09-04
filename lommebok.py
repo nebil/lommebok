@@ -1,9 +1,12 @@
 import sqlite3
-from bottle import get, HTTPError, post, redirect, request, run, template
+from bottle import (get, post, redirect, request, template,
+                    HTTPError, TEMPLATE_PATH,
+                    run)
 
 DATABASE_PATH = 'lommebok.sqlite3'
 database_conn = sqlite3.connect(DATABASE_PATH)
 database_conn.row_factory = sqlite3.Row
+TEMPLATE_PATH.append('templates')
 
 
 @get('/')
