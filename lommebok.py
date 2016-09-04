@@ -1,5 +1,5 @@
 from sqlite3 import connect
-from bottle import get, run, template
+from bottle import get, post, redirect, request, run, template
 
 DATABASE_PATH = 'lommebok.sqlite3'
 database_conn = connect(DATABASE_PATH)
@@ -11,10 +11,19 @@ def index():
 
 
 @get('/accounts/')
-def accounts():
+def get_accounts():
     cursor = database_conn.execute("SELECT * FROM account")
     result = cursor.fetchall()
     return template('accounts', accounts=result)
+
+
+@post('/accounts/')
+def add_account():
+    values = request.forms.get('name'), request.forms.get('currency')
+
+    database_conn.execute("INSERT INTO account VALUES (NULL, ?, ?)", values)
+    database_conn.commit()
+    redirect('')
 
 
 if __name__ == '__main__':
