@@ -9,8 +9,9 @@ database_conn = sqlite3.connect('lommebok.sqlite3')
 
 try:
     database_conn.execute(QUERY)
-except sqlite3.OperationalError:
-    print("error")
+except sqlite3.OperationalError as error:
+    message = "error -- {}".format(error)
+    print(message)
 else:
     database_conn.commit()
 finally:
