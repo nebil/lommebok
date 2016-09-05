@@ -5,7 +5,8 @@ You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
 import sqlite3
-from lommebok import DATABASE_PATH
+
+DATABASE_PATH = 'lommebok.sqlite3'
 
 # Reference: <https://www.sqlite.org/datatype3.html>
 QUERIES = """

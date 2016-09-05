@@ -4,14 +4,13 @@ This source code is subject to the terms of the Mozilla Public License.
 You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
-import script
+from script import DATABASE_PATH
 import sqlite3
 from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
                     run)
 
 CSS_REGEX = r'.*\.css'
-DATABASE_PATH = 'lommebok.sqlite3'
 database_conn = sqlite3.connect(DATABASE_PATH)
 database_conn.row_factory = sqlite3.Row
 TEMPLATE_PATH.append('templates')
