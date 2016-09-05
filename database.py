@@ -28,4 +28,5 @@ def initialize():
     database_conn = sqlite3.connect(PATH)
     database_conn.executescript(QUERIES)
     database_conn.commit()
-    database_conn.close()
+    database_conn.row_factory = sqlite3.Row
+    return database_conn
