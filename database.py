@@ -6,7 +6,7 @@ You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 
 import sqlite3
 
-DATABASE_PATH = 'lommebok.sqlite3'
+PATH = 'lommebok.sqlite3'
 
 # Reference: <https://www.sqlite.org/datatype3.html>
 QUERIES = """
@@ -24,8 +24,8 @@ QUERIES = """
           """
 
 
-def initialize_database():
-    database_conn = sqlite3.connect(DATABASE_PATH)
+def initialize():
+    database_conn = sqlite3.connect(PATH)
     database_conn.executescript(QUERIES)
     database_conn.commit()
     database_conn.close()

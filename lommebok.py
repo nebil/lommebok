@@ -4,14 +4,14 @@ This source code is subject to the terms of the Mozilla Public License.
 You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
-from script import DATABASE_PATH, initialize_database
+import database
 import sqlite3
 from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
                     run)
 
 CSS_REGEX = r'.*\.css'
-database_conn = sqlite3.connect(DATABASE_PATH)
+database_conn = sqlite3.connect(database.PATH)
 database_conn.row_factory = sqlite3.Row
 TEMPLATE_PATH.append('templates')
 
@@ -66,7 +66,7 @@ def add_record(account_id):
 
 
 if __name__ == '__main__':
-    initialize_database()
+    database.initialize()
 
     # Listening on 'localhost:8080' with the standard 'wsgiref' module.
     # More details at <https://docs.python.org/3/library/wsgiref.html>.
