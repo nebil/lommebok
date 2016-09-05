@@ -23,7 +23,9 @@ QUERIES = """
             FOREIGN KEY(account_id) REFERENCES account(id));
           """
 
-database_conn = sqlite3.connect(DATABASE_PATH)
-database_conn.executescript(QUERIES)
-database_conn.commit()
-database_conn.close()
+
+def initialize_database():
+    database_conn = sqlite3.connect(DATABASE_PATH)
+    database_conn.executescript(QUERIES)
+    database_conn.commit()
+    database_conn.close()

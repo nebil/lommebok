@@ -4,7 +4,7 @@ This source code is subject to the terms of the Mozilla Public License.
 You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
-from script import DATABASE_PATH
+from script import DATABASE_PATH, initialize_database
 import sqlite3
 from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
@@ -66,6 +66,8 @@ def add_record(account_id):
 
 
 if __name__ == '__main__':
+    initialize_database()
+
     # Listening on 'localhost:8080' with the standard 'wsgiref' module.
     # More details at <https://docs.python.org/3/library/wsgiref.html>.
     run(host='localhost', port='8080', server='wsgiref', reloader=True)
