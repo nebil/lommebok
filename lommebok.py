@@ -4,6 +4,7 @@ This source code is subject to the terms of the Mozilla Public License.
 You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
+import script
 import sqlite3
 from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,

@@ -72,21 +72,14 @@ Para encender esto localmente, debes seguir los siguientes pasos.
    $ pip install -r requirements.txt
    ```
 
-5. :floppy_disk:
-   Ejecuta el _script_ para crear `lommebok.sqlite3`.
-
-   ```sh
-   $ python3 script.py
-   ```
-
-6. :rocket:
+5. :rocket:
    Enciende, finalmente, el servidor web.
 
    ```sh
    $ python3 lommebok.py
    ```
 
-7. :tada:
+6. :tada:
    _Voilà!_  
    La aplicación _debería_ estar escuchando en el [puerto 8080](http://localhost:8080).
 
