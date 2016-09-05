@@ -90,6 +90,12 @@ Para encender esto localmente, debes seguir los siguientes pasos.
    _Voilà!_  
    La aplicación _debería_ estar escuchando en el [puerto 8080](http://localhost:8080).
 
+## Licencia
+
+Copyright © 2016, Nebil Kawas García  
+El código de este repositorio está bajo el [Mozilla Public License v2.0](
+https://www.mozilla.org/MPL/2.0/).
+
 [/]:# (Referencias implícitas)
 
 [python]:     http://www.pyzo.org/_images/xkcd_python.png
