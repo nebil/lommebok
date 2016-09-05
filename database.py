@@ -5,6 +5,8 @@ You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 """
 
 import sqlite3
+from bottle import install
+from bottle.ext import sqlite
 
 PATH = 'lommebok.sqlite3'
 
@@ -25,8 +27,10 @@ QUERIES = """
 
 
 def initialize():
+    sqlite_plugin = sqlite.Plugin(dbfile=PATH, keyword='database_conn')
+    install(sqlite_plugin)
+
     database_conn = sqlite3.connect(PATH)
     database_conn.executescript(QUERIES)
     database_conn.commit()
-    database_conn.row_factory = sqlite3.Row
     return database_conn

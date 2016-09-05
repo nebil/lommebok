@@ -24,14 +24,14 @@ def index():
 
 
 @get('/accounts/')
-def get_accounts():
+def get_accounts(database_conn):
     cursor = database_conn.execute("SELECT * FROM account")
     result = cursor.fetchall()
     return template('accounts', accounts=result)
 
 
 @get('/accounts/<id_>/')
-def get_account(id_):
+def get_account(database_conn, id_):
     id_ = tuple(id_)
 
     account_query = "SELECT * FROM account WHERE id=?"
@@ -44,7 +44,7 @@ def get_account(id_):
 
 
 @post('/accounts/')
-def add_account():
+def add_account(database_conn):
     values = request.forms.get('name'), request.forms.get('currency')
 
     database_conn.execute("INSERT INTO account VALUES (NULL, ?, ?)", values)
@@ -53,7 +53,7 @@ def add_account():
 
 
 @post('/accounts/<account_id>/records/')
-def add_record(account_id):
+def add_record(database_conn, account_id):
     args = (request.forms.get('amount'), request.forms.get('created_on'),
             account_id)
 
@@ -63,7 +63,7 @@ def add_record(account_id):
 
 
 if __name__ == '__main__':
-    database_conn = database.initialize()
+    database.initialize()
 
     # Listening on 'localhost:8080' with the standard 'wsgiref' module.
     # More details at <https://docs.python.org/3/library/wsgiref.html>.

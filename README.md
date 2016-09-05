@@ -19,15 +19,16 @@ se **deberá** usar una versión de Python superior a **3.2**.
 
 #### Librerías de Python
 
-La librería utilizada está resumida en la siguiente tabla.
+Las librerías utilizadas están resumidas en la siguiente tabla.
 
-Nombre   | Descripción                                        | Versión
--------- | -------------------------------------------------- | ----------
-[bottle] | Un _microframework_ web que no tiene dependencias. | **0.12.9**
+Nombre          | Descripción                                        | Versión
+--------------- | -------------------------------------------------- | ----------
+[bottle]        | Un _microframework_ web que no tiene dependencias. | **0.12.9**
+[bottle-sqlite] | Un _plugin_ de Bottle para trabajar con [SQLite3]. | **0.1.3**
 
-Esta librería también aparece en `requirements.txt`.
-Luego, se **deberá** usar este archivo para instalarla con [pip].  
-Esto nos permitirá trabajar con la misma versión,
+Estas librerías también aparecen en `requirements.txt`.
+Luego, se **deberá** usar este archivo para instalarlas con [pip].  
+Esto nos permitirá trabajar con las mismas versiones,
 consiguiendo instalaciones **replicables**, sin hacer esfuerzo.  
 Bueno, un poco: debemos escribir...
 
@@ -91,8 +92,10 @@ https://www.mozilla.org/MPL/2.0/).
 
 [/]:# (Referencias implícitas)
 
-[python]:     http://www.pyzo.org/_images/xkcd_python.png
-[bottle]:     https://pypi.python.org/pypi/bottle
+[python]:        http://www.pyzo.org/_images/xkcd_python.png
+[bottle]:        https://pypi.python.org/pypi/bottle
+[bottle-sqlite]: https://pypi.python.org/pypi/bottle-sqlite
+[sqlite3]:       https://docs.python.org/3/library/sqlite3.html
 
-[virtualenv]: https://virtualenv.pypa.io/en/stable
-[pip]:        https://pip.pypa.io/en/stable
+[virtualenv]:    https://virtualenv.pypa.io/en/stable
+[pip]:           https://pip.pypa.io/en/stable
