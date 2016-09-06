@@ -23,10 +23,12 @@
 
     <form method='post'>
       <label>Nombre: <input type='text' maxlength=20 name='name'
+                            oninput='setCustomValidity("")'
                             oninvalid='setCustomValidity(
                             "Por favor, indique el nombre de la cuenta.")'
                             required></label>
       <label>Moneda: <input type='text' maxlength=20 name='currency'
+                            oninput='setCustomValidity("")'
                             oninvalid='setCustomValidity(
                             "Por favor, indique el nombre de la moneda.")'
                             required></label>
