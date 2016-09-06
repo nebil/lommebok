@@ -18,7 +18,13 @@
     </table>
 
     <form action='records/' method='post'>
-      <label>Monto: <input type='number' name='amount' min='0'></label>
-      <label>Fecha: <input type='date' name='created_on'></label>
+      <label>Monto: <input type='number' name='amount' min='0'
+                           oninvalid='setCustomValidity(
+                           "Por favor, indique el monto.")'
+                           required></label>
+      <label>Fecha: <input type='date' name='created_on'
+                           oninvalid='setCustomValidity(
+                           "Por favor, indique la fecha.")'
+                           required></label>
       <input type='submit' value='Añadir registro'>
     </form>\\

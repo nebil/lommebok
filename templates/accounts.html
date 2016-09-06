@@ -22,7 +22,13 @@
     % end
 
     <form method='post'>
-      <label>Nombre: <input type='text' maxlength=20 name='name'></label>
-      <label>Moneda: <input type='text' maxlength=20 name='currency'></label>
+      <label>Nombre: <input type='text' maxlength=20 name='name'
+                            oninvalid='setCustomValidity(
+                            "Por favor, indique el nombre de la cuenta.")'
+                            required></label>
+      <label>Moneda: <input type='text' maxlength=20 name='currency'
+                            oninvalid='setCustomValidity(
+                            "Por favor, indique el nombre de la moneda.")'
+                            required></label>
       <input type='submit' value='Añadir cuenta'>
     </form>\\
