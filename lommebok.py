@@ -13,7 +13,7 @@ CSS_REGEX = r'.*\.css'
 TEMPLATE_PATH.append('templates')
 
 
-@get('/<filename:re:{}>/'.format(CSS_REGEX))
+@get('/<filename:re:{}>'.format(CSS_REGEX))
 def return_css_file(filename):
     return static_file(filename, root='templates')
 
@@ -64,7 +64,7 @@ def add_record(database_conn, account_id):
 
 @hook('before_request')
 def append_slash():
-    if request.path.endswith('/'):
+    if request.path.endswith('/') or request.path.endswith('.css'):
         pass
     else:
         redirect(request.path + '/')
