@@ -7,13 +7,13 @@ You can obtain a copy of the MPL at <https://www.mozilla.org/MPL/2.0/>.
 import database
 from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
-                    run)
+                    hook, run)
 
 CSS_REGEX = r'.*\.css'
 TEMPLATE_PATH.append('templates')
 
 
-@get('/<filename:re:{}>'.format(CSS_REGEX))
+@get('/<filename:re:{}>/'.format(CSS_REGEX))
 def return_css_file(filename):
     return static_file(filename, root='templates')
 
@@ -60,6 +60,14 @@ def add_record(database_conn, account_id):
     database_conn.execute("INSERT INTO record VALUES (NULL, ?, ?, ?)", args)
     database_conn.commit()
     redirect('..')
+
+
+@hook('before_request')
+def append_slash():
+    if request.path.endswith('/'):
+        pass
+    else:
+        redirect(request.path + '/')
 
 
 if __name__ == '__main__':
