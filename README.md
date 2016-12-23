@@ -15,7 +15,7 @@ una entidad que almacena valor, en algún tipo de moneda. :moneybag:
 
 :snake: [Python] será nuestra herramienta de trabajo.  
 :warning: Para evitar posibles fallas de compatibilidad,
-se **deberá** usar una versión de Python superior a **3.2**.
+se **deberá** usar una versión de Python superior a **3.3**.
 
 #### Librerías de Python
 
@@ -53,7 +53,7 @@ Para encender esto localmente, debes seguir los siguientes pasos.
 2. :wrench:
    Genera un entorno virtual de Python v3.**X** con [virtualenv].
    En este caso, se llamará `venv`.  
-   No olvides que **X** debe ser: {2, 3, 4, 5}.
+   No olvides que **X** debe ser: {3, 4, 5, 6}.
 
    ```sh
    $ virtualenv --python=python3.X venv
