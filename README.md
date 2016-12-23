@@ -22,8 +22,8 @@ se **deberá** usar una versión de Python superior a **3.3**.
 Las librerías utilizadas están resumidas en la siguiente tabla.
 
 Nombre          | Descripción                                        | Versión
---------------- | -------------------------------------------------- | ----------
-[bottle]        | Un _microframework_ web que no tiene dependencias. | **0.12.9**
+--------------- | -------------------------------------------------- | -----------
+[bottle]        | Un _microframework_ web que no tiene dependencias. | **0.12.11**
 [bottle-sqlite] | Un _plugin_ de Bottle para trabajar con [SQLite3]. | **0.1.3**
 
 Estas librerías también aparecen en `requirements.txt`.
