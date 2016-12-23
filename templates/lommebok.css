@@ -61,6 +61,10 @@ input {
 
   border: 1px solid #DDD;
   background-color: #FFF;
+  font-family: 'Helvetica Neue',
+               'Helvetica', 'Arial',
+               'Liberation Sans', sans-serif;
+  line-height: 1.5em;
 }
 
 input[type='submit'] {
