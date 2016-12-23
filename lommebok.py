@@ -15,7 +15,7 @@ TEMPLATE_PATH.append('templates')
 
 @get('/<filename:re:{}>'.format(CSS_REGEX))
 def return_css_file(filename):
-    return static_file(filename, root='templates')
+    return static_file(filename, root='css')
 
 
 @get('/')
