@@ -46,7 +46,7 @@ Para encender esto localmente, debes seguir los siguientes pasos.
    Clona el repositorio. Luego, accede.
 
    ```sh
-   $ git clone https://github.com/nkawasg/lommebok.git
+   $ git clone https://github.com/nebil/lommebok.git
    $ cd lommebok
    ```
 
