@@ -9,19 +9,13 @@ from bottle import (get, post, redirect, static_file, request, template,
                     HTTPError, TEMPLATE_PATH,
                     hook, run)
 
-CSS_REGEX = r'.*\.css'
-SVG_REGEX = r'.*\.svg'
+ASSETS_REGEX = r'.*\.(css|svg)'
 TEMPLATE_PATH.append('templates')
 
 
-@get('/<filename:re:{}>'.format(CSS_REGEX))
-def return_css_file(filename):
-    return static_file(filename, root='css')
-
-
-@get('/<filename:re:{}>'.format(SVG_REGEX))
-def serve_svg_files(filename):
-    return static_file(filename, root='svg')
+@get('/<filename:re:{}>'.format(ASSETS_REGEX))
+def return_static_file(filename):
+    return static_file(filename, root='assets')
 
 
 @get('/')
