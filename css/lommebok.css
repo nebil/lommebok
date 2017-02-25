@@ -79,3 +79,9 @@ input[type='submit'] {
 input[type='submit']:hover {
   background-color: #8C5;
 }
+
+object {
+  position: absolute;
+    top: 0px;
+  right: 0px;
+}

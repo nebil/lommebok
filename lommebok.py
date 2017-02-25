@@ -10,12 +10,18 @@ from bottle import (get, post, redirect, static_file, request, template,
                     hook, run)
 
 CSS_REGEX = r'.*\.css'
+SVG_REGEX = r'.*\.svg'
 TEMPLATE_PATH.append('templates')
 
 
 @get('/<filename:re:{}>'.format(CSS_REGEX))
 def return_css_file(filename):
     return static_file(filename, root='css')
+
+
+@get('/<filename:re:{}>'.format(SVG_REGEX))
+def serve_svg_files(filename):
+    return static_file(filename, root='svg')
 
 
 @get('/')
@@ -64,7 +70,8 @@ def add_record(database_conn, account_id):
 
 @hook('before_request')
 def append_slash():
-    if request.path.endswith('/') or request.path.endswith('.css'):
+    if (request.path.endswith('/') or request.path.endswith('.css')
+                                   or request.path.endswith('.svg')):
         pass
     else:
         redirect(request.path + '/')
