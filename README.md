@@ -23,7 +23,7 @@ Las librerías utilizadas están resumidas en la siguiente tabla.
 
 Nombre          | Descripción                                        | Versión
 --------------- | -------------------------------------------------- | -----------
-[bottle]        | Un _microframework_ web que no tiene dependencias. | **0.12.11**
+[bottle]        | Un _microframework_ web que no tiene dependencias. | **0.12.13**
 [bottle-sqlite] | Un _plugin_ de Bottle para trabajar con [SQLite3]. | **0.1.3**
 
 Estas librerías también aparecen en `requirements.txt`.
