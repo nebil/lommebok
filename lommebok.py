@@ -64,8 +64,7 @@ def add_record(database_conn, account_id):
 
 @hook('before_request')
 def append_slash():
-    if (request.path.endswith('/') or request.path.endswith('.css')
-                                   or request.path.endswith('.svg')):
+    if any(request.path.endswith(suffix) for suffix in ('/', '.css', '.svg')):
         pass
     else:
         redirect(request.path + '/')
